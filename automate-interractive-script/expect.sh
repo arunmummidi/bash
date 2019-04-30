@@ -1,4 +1,3 @@
-#!/bin/expect -f
 ## Runs through script.sh and passes values based on string
 
 set timeout 10
