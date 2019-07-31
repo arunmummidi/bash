@@ -1,0 +1,98 @@
+1) find / -name <>
+
+2) for loop
+for var in `ls`; do mv $var $var.bak ;done
+
+3) Grep a pattern in multiple files
+grep -iRH http .
+
+4) IF condition:
+
+if [ condition1 -o(or) -a(and) condition2  ]; then {
+} fi
+
+5) case $var in
+	option1) statements
+	;;
+	option2) statements
+	;;
+	*)	 statements
+	;;
+	esac
+
+6) combine variables and read the data from resulting variable name:
+eval newVar=\$$OldVar”string”
+
+7) convert date from epoc to human readable
+raw_date = `date --iso-8601`
+convert epoc date to normal date
+date = `date -d "$raw_date" +%s`
+
+8) print csv values as seperate items
+echo $HOSTSTRING | tr , "\n"
+
+9) list files larger than 100M
+find . -type f -size +100M 2>/dev/null
+
+10) Count lines in large files
+sed -n '$=' filename
+
+11) Debug a script
+set -x
+trap read debug
+
+12) Nullify file
+cat /dev/null > target
+
+13) Create XMB amount of file
+dd if=/dev/zero of=/home/vagrant/\$\{sys\:LOG_FILE\} count=40240 bs=1024
+dd if=/dev/zero of=~/test.log count=40240 bs=1024
+head -c 1G </dev/urandom >/home/vagrant/\$\{sys\:LOG_FILE\}
+head -c 1G </dev/urandom >test
+
+14) Running a detatched process with nohup
+nohup ./some_command.sh > 0524_10qps.log 2>&1 &
+
+Ctrl+A - Detatch
+screen -r - Resume
+
+16) Split file
+
+17) Increase load/CPU usage
+dd if=/dev/zero of=/dev/null
+
+18) Encrypt using Base64 algorithm
+echo -n "client_id:secret_key" | base64
+
+19) rsync
+ rsync -av /a/nbackup204/vol/vol1/app_log_apdbapi/ apdbapi_app_log/
+
+20) know public IP
+ curl -s http://whatismyip.akamai.com/
+
+21) Unzip war file without jar command
+unzip -qq myFile.war -d /home/app/
+
+
+# vi /etc/environment
+
+http_proxy="http://proxysrv:8080/"
+https_proxy="https://proxysrv:8080/"
+ftp_proxy="ftp://proxysrv:8080/"
+no_proxy=".mylan.local,.domain1.com,host1,host2"
+
+
+vi /etc/yum.conf
+proxy=http://proxysrv:8080/
+
+yum install yum-utils
+yum-complete-transaction --cleanup-only
+
+
+kubeadm config images pull
+
+
+setenv LANG en_US.UTF-8
+setenv NLS_LANG AMERICAN_AMERICA.WE8ISO8859P1
+
+echo | openssl s_client -servername www.com -connect www.com:443 2>/dev/null | openssl x509 -noout -dates
