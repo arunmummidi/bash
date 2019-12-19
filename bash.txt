@@ -65,10 +65,11 @@ dd if=/dev/zero of=/dev/null
 echo -n "client_id:secret_key" | base64
 
 19) rsync
- rsync -av /a/nbackup204/vol/vol1/app_log_apdbapi/ apdbapi_app_log/
+ rsync -av /source/somedir//xxx/ destination/
 
 20) know public IP
  curl -s http://whatismyip.akamai.com/
+ curl ifconfig.me
 
 21) Unzip war file without jar command
 unzip -qq myFile.war -d /home/app/
