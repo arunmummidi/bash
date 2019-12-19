@@ -96,3 +96,6 @@ setenv LANG en_US.UTF-8
 setenv NLS_LANG AMERICAN_AMERICA.WE8ISO8859P1
 
 echo | openssl s_client -servername www.com -connect www.com:443 2>/dev/null | openssl x509 -noout -dates
+
+# Check SSL expiry dates for list of VIPs:
+for VIP in `cat list.txt`;do echo $VIP; echo |gtimeout 1 openssl s_client -servername $VIP -connect $VIP:443 2>/dev/null | openssl x509 -noout -dates | grep notAfter; done
