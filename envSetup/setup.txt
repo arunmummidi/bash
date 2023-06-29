@@ -1,0 +1,5 @@
+snap install openbox
+apt install lxterminal
+ssh-keygen
+Add application entries in
+/etc/xdg/openbox/menu.xml
