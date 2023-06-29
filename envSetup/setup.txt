@@ -1,5 +1,13 @@
 snap install openbox
-apt install lxterminal
-ssh-keygen
 Add application entries in
 /etc/xdg/openbox/menu.xml
+
+apt install lxterminal
+
+ssh-keygen
+
+xrandr
+x11-server-utils
+# Turn off a display
+xrandr --listmonitors
+xrandr --output LVDS-1 --off
