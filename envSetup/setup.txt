@@ -1,6 +1,13 @@
+# openbox window manager config
 snap install openbox
 Add application entries in
 /etc/xdg/openbox/menu.xml
+
+# Add below property to ~/.config/openbox/rc.yaml
+# to open all apps maximized
+    <application class="*">
+        <maximized>yes</maximized>
+    </application>
 
 apt install lxterminal
 
@@ -11,3 +18,11 @@ x11-server-utils
 # Turn off a display
 xrandr --listmonitors
 xrandr --output LVDS-1 --off
+
+# Skip waiting for network configuration
+# during boot for unused eth interface
+# Remove the configuration of unused
+# interface from netplan
+/etc/netplan/00-installer-config.yaml.original
+netplan generate
+netplan apply
