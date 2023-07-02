@@ -28,5 +28,5 @@ xrandr --output LVDS-1 --off
 netplan generate
 netplan apply
 
-# Change display brightness persistently
+# Change display backlight
 /sys/class/backlight/intel_backlight/brightness
