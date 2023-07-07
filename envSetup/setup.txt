@@ -30,3 +30,9 @@ netplan apply
 
 # Change display backlight
 /sys/class/backlight/intel_backlight/brightness
+
+# Tune volume on console
+amixer -D pulse sset Master 5%+
+pulseaudio -k && pulseaudio -D
+sudo alsa force-reload
+pavucontrol
