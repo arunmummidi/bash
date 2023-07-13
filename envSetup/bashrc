@@ -2,4 +2,5 @@
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa_github
 alias laptopOff='xrandr --output LVDS-1 --off'
+alias laptopOn='xrandr --output LVDS-1 --auto'
 alias kubectl='minikube kubectl'
