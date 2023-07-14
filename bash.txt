@@ -68,10 +68,9 @@ echo -n "client_id:secret_key" | base64
  rsync -av /source/somedir//xxx/ destination/
 
 20) know public IP
- curl -s http://whatismyip.akamai.com/
  curl ifconfig.me
 
-21) Unzip war file without jar command
+21) Unzip war file
 unzip -qq myFile.war -d /home/app/
 
 
@@ -89,8 +88,6 @@ proxy=http://proxysrv:8080/
 yum install yum-utils
 yum-complete-transaction --cleanup-only
 
-
-kubeadm config images pull
 
 
 setenv LANG en_US.UTF-8

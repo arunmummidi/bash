@@ -14,8 +14,6 @@ Add application entries in
         <maximized>yes</maximized>
     </application>
 
-ssh-keygen
-
 # Turn off a display
 xrandr --listmonitors
 xrandr --output LVDS-1 --off
