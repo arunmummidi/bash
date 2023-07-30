@@ -21,6 +21,12 @@ mv /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.o
 netplan generate
 netplan apply
 
+# Troubleshoot network
+ping -c2 8.8.4.4 # Ping google DNS to check basic connectivity
+
+ip route show default # check if default route is good
+ip route add default via 192.168.1.1 # add default route to gateway/ router if route is corrupt/missing
+
 # Change driver level display backlight
 /sys/class/backlight/intel_backlight/brightness
 

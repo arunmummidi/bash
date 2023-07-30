@@ -1,0 +1,14 @@
+network:
+  wifis:
+    <wifi interface ID>:
+      access-points:
+        <network SSID>:
+          password: <password>
+      dhcp4: no
+      addresses:
+        - <Desired IP address>
+      routes:
+        - to: default
+          via: <Gateway/router IP address>
+      nameservers:
+        addresses: [Nameserver/gateway/router IP address]
