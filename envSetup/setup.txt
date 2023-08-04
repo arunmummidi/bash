@@ -1,7 +1,5 @@
-# Install openbox window manager
-snap install openbox
-apt install lxterminal
-apt install xinit #x11-server-utils
+# Install openbox window manager, a terminal app and Graphics server
+apt install openbox lxterminal xinit #x11-server-utils
 
 # Configure openbox window manager
 # Add application entries in
