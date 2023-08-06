@@ -2,10 +2,9 @@
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa_github
 
-# Change latop display brightness
+# Shortcuts to change latop display brightness
 alias laptopDisplaySet='xrandr --output LVDS-1 --brightness 0.25'
 
-# Turn on/off laptop display
+# Shortcuts to turn on/off laptop display
 alias laptopOff='xrandr --output LVDS-1 --off'
 alias laptopOn='xrandr --output LVDS-1 --auto'
-alias kubectl='minikube kubectl'
