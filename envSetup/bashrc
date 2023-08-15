@@ -1,6 +1,6 @@
 # Stat the ssh-agent for handling ssh-key based auth
 eval `ssh-agent`
-ssh-add ~/.ssh/id_rsa_github
+ssh-add ~/.ssh/*.id_rsa
 
 # Shortcuts to change latop display brightness
 alias laptopDisplaySet='xrandr --output LVDS-1 --brightness 0.25'
@@ -11,7 +11,3 @@ alias laptopOn='xrandr --output LVDS-1 --auto'
 
 # Add GPG Keys to session
 export GPG_TTY=$(tty)
-
-#gpg --list-secret-keys --keyid-format=long
-#git config --global user.signingkey
-#git config --global commit.gpgsign true

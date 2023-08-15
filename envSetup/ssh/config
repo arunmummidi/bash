@@ -1,9 +1,9 @@
-Host github.com
- HostName github.com
- IdentityFile ~/.ssh/*.id_rsa
-Host * !localhost
-    LogLevel INFO
-    IdentityFile ~/.ssh/id_rsa
-Host <IP address>
-    LogLevel INFO
-    IdentityFile ~/.ssh/id1.id_rsa
+Host github.com-user1
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/user1.id_rsa
+
+Host github.com-user2
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/user2.id_rsa

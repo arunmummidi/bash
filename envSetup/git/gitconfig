@@ -1,0 +1,7 @@
+[includeIf "gitdir:~/github/username1/"]
+    path = ~/github/username1/.gitconfig.username1
+[includeIf "gitdir:~/github/username2/"]
+    path = ~/github/username2/.gitconfig.username2
+
+[core]
+    excludesfile = ~/.gitignore
