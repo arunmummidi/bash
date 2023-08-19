@@ -15,11 +15,9 @@ echo "    <application class="*">
 # interface from netplan
 mv /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.original
 netplan generate
-netplan apply
+netplan try
 
 # Troubleshoot network
-ping -c2 8.8.4.4 # Ping google DNS to check basic connectivity
-
 ip route show default # check if default route is good
 ip route add default via 192.168.1.1 # add default route to gateway/ router if route is corrupt/missing
 
@@ -28,15 +26,13 @@ ip route add default via 192.168.1.1 # add default route to gateway/ router if r
 
 # Configure basic TCP/UDP security
 apt install ufw && ufw allow from 192.168.0.0/27 to any port 22 # Making sure not getting locked out
+ufw allow from 0.0.0.0 to any port <port> proto tcp # Exposes to internet!!
 ufw show added
 ufw enable
 
 # Tune volume on console
 amixer -D pulse sset Master 5%+
-pulseaudio -k && pulseaudio -D
-alsa force-reload
+pulseaudio -k && pulseaudio -D && alsa force-reload
 
 # Volume control GUI
 pavucontrol
-
-
