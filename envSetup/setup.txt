@@ -5,14 +5,12 @@ apt install openbox lxterminal xinit x11-server-utils
 # Add application entries in
 /etc/xdg/openbox/menu.xml
 
-# Add below property to ~/.config/openbox/rc.yaml
-# to open all apps maximized
-    <application class="*">
+# Launch windows maximized
+install -Dv /dev/null  ~/.config/openbox/rc.yaml
+echo "    <application class="*">
         <maximized>yes</maximized>
-    </application>
+    </application>" >~/.config/openbox/rc.yaml
 
-# Skip waiting for network configuration
-# during boot for unused eth interface
 # Remove the configuration of unused
 # interface from netplan
 mv /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.original
@@ -28,6 +26,11 @@ ip route add default via 192.168.1.1 # add default route to gateway/ router if r
 # Change driver level display backlight
 /sys/class/backlight/intel_backlight/brightness
 
+# Configure basic TCP/UDP security
+apt install ufw && ufw allow from 192.168.0.0/27 to any port 22 # Making sure not getting locked out
+ufw show added
+ufw enable
+
 # Tune volume on console
 amixer -D pulse sset Master 5%+
 pulseaudio -k && pulseaudio -D
@@ -35,3 +38,5 @@ alsa force-reload
 
 # Volume control GUI
 pavucontrol
+
+
