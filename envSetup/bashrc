@@ -11,3 +11,4 @@ alias laptopOn='xrandr --output LVDS-1 --auto'
 
 # Add GPG Keys to session
 export GPG_TTY=$(tty)
+echo 1000 | sudo tee /sys/class/backlight/intel_backlight/brightness

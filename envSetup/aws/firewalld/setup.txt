@@ -1,0 +1,6 @@
+yum install firewalld && systemctl enable firewalld && systemctl start firewalld
+firewall-cmd --get-default-zone
+firewall-cmd --zone=public --list-services
+firewall-cmd --zone=public --add-service=ssh    # Service configuration /usr/lib/firewalld/services/ssh.xml
+firewall-cmd --zone=public --permanent --add-service=ssh # Make permanent after testing
+firewall-cmd --zone=public --permanent --delete-service=ssh # Make permanent after testing

@@ -1,0 +1,7 @@
+<!--/usr/lib/firewalld/services/spring-boot.xml-->
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>spring-boot</short>
+  <description>Spring boot application</description>
+  <port protocol="tcp" port="9080"/>
+</service>

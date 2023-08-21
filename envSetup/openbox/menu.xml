@@ -9,8 +9,8 @@
   <item label="lxterminal">
     <action name="Execute"><execute>lxterminal</execute></action>
   </item>
-  <item label="chromium">
-    <action name="Execute"><execute>chromium</execute></action>
+  <item label="Chromium">
+    <action name="Execute"><execute>chromium-browser</execute></action>
   </item>
   <!-- This requires the presence of the 'obamenu' package to work -->
   <menu id="/Debian" />
