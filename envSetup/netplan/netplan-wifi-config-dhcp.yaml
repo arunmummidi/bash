@@ -1,7 +1,0 @@
-network:
-  wifis:
-    <wifi interface ID>:
-      access-points:
-        <network SSID>:
-          password: <password>
-      dhcp4: yes

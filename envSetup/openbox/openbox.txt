@@ -1,0 +1,12 @@
+# Install UI tools
+apt install openbox lxterminal xinit x11-server-utils
+
+# Configure openbox window manager
+# Add application entries in
+/etc/xdg/openbox/menu.xml
+
+# Launch windows maximized
+install -Dv /dev/null  ~/.config/openbox/rc.yaml
+echo "    <application class="*">
+        <maximized>yes</maximized>
+    </application>" >~/.config/openbox/rc.yaml

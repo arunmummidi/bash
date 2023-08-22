@@ -1,0 +1,5 @@
+# Configure basic TCP/UDP security
+apt install ufw && ufw allow from 192.168.0.0/27 to any port 22 # Making sure not getting locked out
+ufw allow from 0.0.0.0 to any port <port> proto tcp # Exposes to internet!!
+ufw show added
+ufw enable
